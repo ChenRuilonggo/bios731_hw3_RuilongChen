@@ -18,6 +18,10 @@ execute:
 library(tidyverse)
 ```
 
+## Github link
+
+<https://github.com/ChenRuilonggo/bios731_hw3_RuilongChen>
+
 ## Context and learning objectives
 
 This assignment reinforces ideas in Module 3: **Optimization, Part 1**. We focus specifically on implementing the Newton's method, EM, and MM algorithms.

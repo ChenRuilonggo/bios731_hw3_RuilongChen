@@ -3,7 +3,7 @@
     "path": "C:/Users/sunshine/Desktop/emory_study/731/hw3/HW_optimization-1.qmd",
     "project_path": "HW_optimization-1.qmd",
     "type": "quarto_markdown",
-    "hash": "0",
+    "hash": "2169737436",
     "contents": "",
     "dirty": false,
     "created": 1772570274021.0,
@@ -16,16 +16,16 @@
         "rmdVisualWrapConfigured": "true",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "cursorPosition": "322,0",
-        "scrollLine": "317",
-        "rmdVisualModeLocation": "15419:10333.9384765625"
+        "cursorPosition": "20,0",
+        "scrollLine": "9",
+        "rmdVisualModeLocation": "408:120.6060562133789"
     },
     "folds": "",
-    "lastKnownWriteTime": 1772599383,
+    "lastKnownWriteTime": 1772600391,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1772599383172,
+    "last_content_update": 1772600391335,
     "read_only": false,
     "read_only_alternatives": []
 }
