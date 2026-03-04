@@ -1,0 +1,36 @@
+"0","#| label: results-table"
+"0",""
+"0","# Helper function to format results"
+"0","format_res <- function(name, res) {"
+"0","  lower <- res$b - 1.96 * res$se"
+"0","  upper <- res$b + 1.96 * res$se"
+"0","  "
+"0","  data.frame("
+"0","    Method = name,"
+"0","    Parameter = c(""Beta_0 (Intercept)"", ""Beta_1 (Slope)""),"
+"0","    Estimate = round(res$b, 4),"
+"0","    `95% CI` = paste0(""("", round(lower, 3), "", "", round(upper, 3), "")""),"
+"0","    Iterations = res$iter,"
+"0","    `Time (ms)` = round(as.numeric(res$time) * 1000, 2)"
+"0","  )"
+"0","}"
+"0",""
+"0","# Combine all results"
+"0","comparison_df <- rbind("
+"0","  format_res(""Newton"", methods$Newton),"
+"0","  format_res(""MM"", methods$MM),"
+"0","  format_res(""GLM"", methods$GLM),"
+"0","  format_res(""Optim (BFGS)"", methods$Optim)"
+"0",")"
+"2","Warning: 短变数里找到了行名，因此不用"
+"0","kable(comparison_df, caption = ""Performance comparison across four optimization methods"")"
+"2","Registered S3 methods overwritten by 'htmltools':
+  method               from         
+  print.html           tools:rstudio
+  print.shiny.tag      tools:rstudio
+  print.shiny.tag.list tools:rstudio
+"
+"2","Registered S3 method overwritten by 'rmarkdown':
+  method         from
+  print.paged_df     
+"

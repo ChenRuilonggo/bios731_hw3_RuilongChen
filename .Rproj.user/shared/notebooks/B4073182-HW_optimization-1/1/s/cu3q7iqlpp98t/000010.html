@@ -1,0 +1,98 @@
+<table>
+<caption>Performance comparison across four optimization
+methods</caption>
+<colgroup>
+<col width="13%" />
+<col width="14%" />
+<col width="21%" />
+<col width="10%" />
+<col width="15%" />
+<col width="12%" />
+<col width="11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Method</th>
+<th align="left">Parameter</th>
+<th align="right">Estimate</th>
+<th align="left">X95..CI</th>
+<th align="right">Iterations</th>
+<th align="right">Time..ms.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">Newton</td>
+<td align="left">Beta_0 (Intercept)</td>
+<td align="right">1.1539</td>
+<td align="left">(0.818, 1.49)</td>
+<td align="right">6</td>
+<td align="right">163.75</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">Newton</td>
+<td align="left">Beta_1 (Slope)</td>
+<td align="right">0.5129</td>
+<td align="left">(0.16, 0.866)</td>
+<td align="right">6</td>
+<td align="right">163.75</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">MM</td>
+<td align="left">Beta_0 (Intercept)</td>
+<td align="right">1.1539</td>
+<td align="left">(0.818, 1.49)</td>
+<td align="right">169</td>
+<td align="right">274.73</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">MM</td>
+<td align="left">Beta_1 (Slope)</td>
+<td align="right">0.5129</td>
+<td align="left">(0.16, 0.866)</td>
+<td align="right">169</td>
+<td align="right">274.73</td>
+</tr>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="left">GLM</td>
+<td align="left">Beta_0 (Intercept)</td>
+<td align="right">1.1539</td>
+<td align="left">(0.818, 1.49)</td>
+<td align="right">4</td>
+<td align="right">11.62</td>
+</tr>
+<tr class="even">
+<td align="left">x_data</td>
+<td align="left">GLM</td>
+<td align="left">Beta_1 (Slope)</td>
+<td align="right">0.5129</td>
+<td align="left">(0.16, 0.866)</td>
+<td align="right">4</td>
+<td align="right">11.62</td>
+</tr>
+<tr class="odd">
+<td align="left">11</td>
+<td align="left">Optim (BFGS)</td>
+<td align="left">Beta_0 (Intercept)</td>
+<td align="right">1.1539</td>
+<td align="left">(0.818, 1.49)</td>
+<td align="right">27</td>
+<td align="right">11.63</td>
+</tr>
+<tr class="even">
+<td align="left">21</td>
+<td align="left">Optim (BFGS)</td>
+<td align="left">Beta_1 (Slope)</td>
+<td align="right">0.5129</td>
+<td align="left">(0.16, 0.866)</td>
+<td align="right">27</td>
+<td align="right">11.63</td>
+</tr>
+</tbody>
+</table>
