@@ -324,8 +324,20 @@ Bootstrap is easier to implement than Louis' method or SEM, but Extra credit if 
 
 **Part A**: Show that the expected and observed information are equivalent for logistic regression
 
+For logistic regression, let $p_i = \text{Pr}(Y_i = 1 | X_i) = \frac{\exp(X_i^T\beta)}{1 + \exp(X_i^T\beta)}$.The log-likelihood is:$$\ell(\beta) = \sum_{i=1}^n [y_i X_i^T\beta - \log(1 + \exp(X_i^T\beta))]$$
+
+1.  The Score Function (Gradient):$$\nabla \ell(\beta) = \sum_{i=1}^n (y_i - p_i)X_i$$
+
+2.  The Observed Information $J(\beta)$:Taking the negative of the derivative of the score function:$$J(\beta) = -\nabla^2 \ell(\beta) = \sum_{i=1}^n \frac{\partial p_i}{\partial \beta} X_i^T$$Since $\frac{\partial p_i}{\partial \beta} = p_i(1-p_i)X_i$, we get:$$J(\beta) = \sum_{i=1}^n p_i(1-p_i) X_i X_i^T$$
+
+3.  The Expected Information $I(\beta)$:$$I(\beta) = E[J(\beta)] = E\left[ \sum_{i=1}^n p_i(1-p_i) X_i X_i^T \right]$$Because $p_i$ depends only on $X_i$ (which is treated as fixed/given) and the constant parameters $\beta$, there is no random variable $Y_i$ left in the expression for $J(\beta)$. Therefore:$$E[J(\beta)] = J(\beta)$$
+
+Conclusion: For Logistic Regression, the Expected and Observed information are equivalent because the Hessian does not depend on the observed outcomes $y_i$. This is a property of Generalized Linear Models (GLMs) with canonical link functions.
+
 <br> **Part B**: Let's say you are instead performing probit regression, which is similar to logistic regression but with a different link function. Specifically, probit regression uses a probit link:
 
 $$\Phi^{-1}(Pr[Y_i = 1 |X_i]) = X_i^T\beta,$$
 
 where $\Phi^{-1}$ is inverse of the CDF for the standard normal distribution. **Are the expected and observed information equivalent for probit regression?** Justify why or why not.
+
+In Probit regression, we use the link $\Phi^{-1}(p_i) = X_i^T\beta$, which means $p_i = \Phi(X_i^T\beta)$.The log-likelihood is:$$\ell(\beta) = \sum_{i=1}^n [y_i \log(\Phi(X_i^T\beta)) + (1-y_i) \log(1 - \Phi(X_i^T\beta))]$$Are they equivalent?No. The expected and observed information are not equivalent for probit regression.Justification:Unlike the logit link (which is the canonical link for the Bernoulli distribution), the probit link is non-canonical. When you take the second derivative of the probit log-likelihood, the resulting Hessian $J(\beta)$ will contain terms involving the actual observed values $y_i$.Specifically, when you differentiate the terms like $y_i \log(\Phi(\cdot))$, the $y_i$ remains as a coefficient in the second derivative. Because $J(\beta)$ depends on the random variable $y_i$, its expectation $E[J(\beta)]$ will replace $y_i$ with $E[y_i] = p_i$, resulting in a different expression than the observed $J(\beta)$ itself.
